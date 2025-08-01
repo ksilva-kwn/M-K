@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor</title>
+    <!-- Link da biblioteca Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Nosso Amor 🤍 M&K</h1>
+    </header>
+
+    <section class="carousel-container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Adicione 10 imagens no carrossel -->
+                <div class="swiper-slide"><img src="./assests/img1.png" alt="Foto 1"></div>
+                <div class="swiper-slide"><img src="./assests/img2.png" alt="Foto 2"></div>
+                <div class="swiper-slide"><img src="./assests/img3.png" alt="Foto 3"></div>
+                <div class="swiper-slide"><img src="./assests/img4.png" alt="Foto 4"></div>
+                <div class="swiper-slide"><img src="./assests/img5.png" alt="Foto 5"></div>
+                <div class="swiper-slide"><img src="./assests/img6.png" alt="Foto 6"></div>
+                <div class="swiper-slide"><img src="./assests/img7.png" alt="Foto 7"></div>
+                <div class="swiper-slide"><img src="./assests/img8.png" alt="Foto 8"></div>
+                <div class="swiper-slide"><img src="./assests/img9.png" alt="Foto 9"></div>
+                <div class="swiper-slide"><img src="./assests/img10.png" alt="Foto 10"></div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Paginação -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="story">
+        <h2>Nossa História</h2>
+        <div class="story-block">
+            <img src="./assests/img2.png" alt="Primeiro encontro">
+            <p>
+                Tudo começou no dia <strong>08 de julho de 2024</strong>, em um encontro inesperado que mudou as nossas vidas para sempre. Desde o primeiro olhar, algo diferente nasceu em nossos corações. No início, nunca imaginamos que chegariamos até aqui, mas com o passar do tempo, percebemos que havia algo muito mais forte nos conectando.
+            </p>
+        </div>
+        <div class="story-block reverse">
+            <img src="./assests/img10.png" alt="Pedido de namoro">
+            <p>
+                Dias depois, eu criei coragem e pedi você em namoro. Aquele momento ficará para sempre marcado em minha memória como o início da nossa história juntos. Desde então, vivemos uma jornada repleta de amor, companheirismo e superação.
+            </p>
+        </div>
+        <div class="story-block">
+            <img src="./assests/img1.png" alt="Momentos difíceis">
+            <p>
+                (Não temos fotos de momentos ruins...) <br>  Nosso relacionamento não foi feito apenas de momentos fáceis. Passamos por várias situações difíceis que poderiam ter nos afastado, mas a força do nosso amor nos manteve juntos. Cada desafio que enfrentamos serviu apenas para provar o quanto somos fortes como casal.
+            </p>
+        </div>
+        <div class="story-block reverse">
+            <img src="./assests/img8.png" alt="Momentos felizes">
+            <p>
+                Você é meu <strong>Porto Seguro</strong>, a luz que ilumina os meus dias e a razão pela qual acredito que o amor verdadeiro existe. Ao seu lado, aprendi o que significa amar e ser amado de verdade. Cada sorriso seu é a prova de que fiz a melhor escolha da minha vida.
+            </p>
+        </div>
+        <div class="story-block">
+            <img src="./assests/img9.png" alt="Nosso futuro">
+            <p>
+                Hoje, olhando para tudo o que construímos juntos, tenho a certeza de que nada acontece por acaso. Você é o meu destino, o meu futuro, e a pessoa que quero ao meu lado para sempre. Amo cada detalhe de você, cada momento que compartilhamos, e mal posso esperar pelos próximos capítulos da nossa história.
+            </p>
+        </div>
+        <p class="final-message">
+            Eu te amo, <span class="highlight">neneca</span>. Obrigado por ser o amor da minha vida e por tornar cada dia mais especial.
+        </p>
+    </section>
+
+    <section class="counter">
+        <h2>Estamos juntos há:</h2>
+        <div id="time-counter">Calculando...</div>
+    </section>
+
+    <footer class="footer">
+        <p>❤️ Feito com amor por Kawan Silva ❤️</p>
+    </footer>
+
+    <!-- Link da biblioteca Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Configuração do carrossel Swiper
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Script para atualizar o contador
+        const startDate = new Date('2024-07-08T00:00:00'); // Ajuste a data inicial
+        const counterElement = document.getElementById('time-counter');
+
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            counterElement.innerText = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+
+<script src="https://unpkg.com/heic2any"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<div id="qrcode"></div>
+<script>
+    const url = "https://seusite.com"; // Substitua pelo link do site
+    QRCode.toCanvas(document.getElementById('qrcode'), url, function (error) {
+        if (error) console.error(error);
+        console.log('QR Code gerado!');
+    });
+</script>
+</body>
+</html>
